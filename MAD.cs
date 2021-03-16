@@ -22,7 +22,7 @@ namespace BnkProject
             MAD SOMME = new MAD(0);
             SOMME.Valeur = v0.Valeur + v1.Valeur;
             return SOMME;
-
+            
         }
         public static MAD operator -(MAD v0, MAD v1)
         {
@@ -75,23 +75,6 @@ namespace BnkProject
             else
                 return false;
         }
-        public static bool operator >(MAD v0, double v1)
-        {
-            if (v0.Valeur > v1)
-            {
-                return true;
-            }
-            else
-                return false;
-        }
-        public static bool operator <(MAD v0, double v1)
-        {
-            if (v0.Valeur < v1)
-            {
-                return true;
-            }
-            else
-                return false;
-        }
+
     }
 }

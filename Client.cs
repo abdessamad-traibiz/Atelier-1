@@ -8,7 +8,9 @@ namespace BnkProject
 {
     class Client
     {
-        private string Nom, Prenom, Adresse;
+        private string Nom;
+        private string Prenom;
+        private string Adresse;
         public Client(string N, string P, string A)
         {
             this.Nom = N;

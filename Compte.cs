@@ -14,7 +14,15 @@ namespace BnkProject
         private MAD Solde;
         private static MAD plafond = new MAD(2000);
 
-        public Compte(Client cl, MAD md)
+        //un constructeur static ,pas niv de visblite(prive,pub) , pas d'argument , sans this
+        //il sert a initialiser les attributs statics
+        /*static Compte()
+        {
+            //Cpt = 0;
+            //plafond = new MAD(2000);
+        }*/
+
+         public Compte(Client cl, MAD md)
         {
             this.Titulaire = cl;
             this.Solde = md;
@@ -23,7 +31,8 @@ namespace BnkProject
 
         public bool Crediter(MAD Somme)
         {
-            if (Somme > 0)
+            MAD ValNull = new MAD(0);
+            if (Somme > ValNull)
             {
                 this.Solde += Somme;
                 return true;
@@ -34,7 +43,8 @@ namespace BnkProject
         }
         public bool Debiter(MAD Somme)
         {
-            if (this.Solde > Somme && Somme <= plafond)
+            MAD NullVal = new MAD(0);
+            if (this.Solde > Somme && Somme < plafond && Somme>NullVal)
             {
                 this.Solde -= Somme;
                 return true;
@@ -54,8 +64,8 @@ namespace BnkProject
         {
             Console.WriteLine("************************************************");
             Console.WriteLine("Numéro du Compte: " + this.NumCpt);
-            Console.Write("Solde du compte: "); Solde.Afficher();
-            Console.WriteLine("Propriétaire du compte : "); Titulaire.Afficher();
+            Console.Write("Solde du compte: "); this.Solde.Afficher();
+            Console.WriteLine("Propriétaire du compte : "); this.Titulaire.Afficher();
             Console.WriteLine("*********************************************");
         }
 
