@@ -20,7 +20,7 @@ namespace BnkProject
             Console.Write("    Nom :  "); string Nom2 = Console.ReadLine();
             Console.Write("    Prénom :  "); string Prenom2 = Console.ReadLine();
             Console.Write("    Adresse :  "); string Adresse2 = Console.ReadLine();
-            Client client2 = new Client(Nom2, Prenom2, Prenom2);//ajouter client 2
+            Client client2 = new Client(Nom2, Prenom2, Adresse2);//ajouter client 2
 
             Console.WriteLine("-----------------------------------");
             Console.Write("Donnez une valeur du MAD pour le client 1 : "); double valeur1 = double.Parse(Console.ReadLine());
@@ -40,28 +40,25 @@ namespace BnkProject
             //-------------------------------débiter------------------------------------
             Console.Write("Donnez une valeur à débiter : "); double val = double.Parse(Console.ReadLine());
             MAD deb = new MAD(val);//plafond=2000 
-            compte1.Debiter(deb);
             if (compte1.Debiter(deb))
             {
                 Console.WriteLine("Compte 1 débiter avec succé!!");
             }
             else
                 Console.WriteLine("Compte 1 n'est pas débiter!!");
-
             //-------------------------------consulter------------------------------------
             Console.WriteLine("*****Consultation du compte 1 après le débit*****");
             compte1.Consulter();
             //-------------------------------créditer------------------------------------
             Console.Write("Donnez une valeur à créditer : "); double val1 = double.Parse(Console.ReadLine());
             MAD cred = new MAD(val1);
-            compte2.Crediter(cred);
             if (compte2.Crediter(cred))
             {
                 Console.WriteLine("Compte 2 Créditer avec succé!!");
+
             }
             else
                 Console.WriteLine("Compte 1 n'est pas créditer!!");
-
             //-------------------------------consulter------------------------------------
             Console.WriteLine("*****Consultation du compte 2 du client 2*****");
             compte2.Consulter();
@@ -70,13 +67,13 @@ namespace BnkProject
             Console.WriteLine("*****Versement*****");
             Console.Write("Donnez une somme à verser : "); double S = double.Parse(Console.ReadLine());
             MAD somme = new MAD(S);
-            compte1.Verser(compte2, somme);
             if (compte1.Verser(compte2, somme))
             {
                 Console.WriteLine("Virement bien passé !!");
             }
             else
                 Console.WriteLine("Virement échoué !!");
+
             //------------------------------------------------------
             Console.WriteLine("*****Consultation du compte 1 *****");
             compte1.Consulter();
