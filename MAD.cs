@@ -13,17 +13,16 @@ namespace BnkProject
         {
             this.Valeur = val;
         }
-        public void Afficher()
+        public void AfficherSolde()
         {
             Console.WriteLine(this.Valeur + " MAD");
         }
         public static MAD operator +(MAD v0, MAD v1)
-        {
-            MAD SOMME = new MAD(0);
-            SOMME.Valeur = v0.Valeur + v1.Valeur;
-            return SOMME;
-            
-        }
+         {
+                MAD SOMME = new MAD(0);
+                SOMME.Valeur = v0.Valeur + v1.Valeur;
+                return SOMME;
+         }
         public static MAD operator -(MAD v0, MAD v1)
         {
             MAD SOUSTRACTION = new MAD(0);

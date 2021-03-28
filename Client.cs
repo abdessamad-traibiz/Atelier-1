@@ -18,13 +18,15 @@ namespace BnkProject
             this.Adresse = A;
 
         }
-        public void Afficher()
+        public void AfficherClient()
         {
+            Console.WriteLine($"Les infos du client: Nom: {this.Nom} Prénom: {this.Prenom} Adresse: {this.Adresse}");
+            /*
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Nom : " + this.Nom);
             Console.WriteLine("Prénom : " + this.Prenom);
             Console.WriteLine("Adresse : " + this.Adresse);
-            Console.WriteLine("-----------------------------------");
+            Console.WriteLine("-----------------------------------");*/
         }
     }
 }
